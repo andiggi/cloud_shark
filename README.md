@@ -4,10 +4,10 @@
 
  ## Overview
 
- This template provisions an S3 bucket (`pulumi_aws.s3.BucketV2`) in your AWS account and exports its ID as an output. It’s an ideal starting point when:
-  - You want to learn Pulumi with AWS in Python.
-  - You need a barebones S3 bucket deployment to build upon.
-  - You prefer a minimal template without extra dependencies.
+automatic aws billing daily, weekly, monthly and yearly sent to your email
+uses Lambda, SNS, and cost explorer. 
+
+
 
  ## Prerequisites
 
@@ -15,10 +15,14 @@
  - AWS credentials configured in your environment (for example via AWS CLI or environment variables).
  - Python 3.6 or later installed.
  - Pulumi CLI already installed and logged in.
+ 
+ ## Gotchas
+  - Sometimes email for SNS subscription is not sent, 
+      login to AWS console and resend the email for confirmation
 
  ## Getting Started
 
- 1. Generate a new project from this template:
+ 1. First Generate a new project from this template:
     ```bash
     pulumi new aws-python
     ```
