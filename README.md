@@ -1,8 +1,3 @@
- # AWS Python S3 Bucket Pulumi Template
-
- A minimal Pulumi template for provisioning a single AWS S3 bucket using Python.
-
- ## Overview
 
 # 🦈 Cloud Shark — AWS Cost Reports by Email
 
