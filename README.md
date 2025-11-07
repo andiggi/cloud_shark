@@ -13,12 +13,40 @@ It keeps track of your AWS spending trends and sends cost summaries straight to 
 - 100 % open source — written in Python 🐍
 
 ---
+
+ ## Outputs
+
+ send email of cost assesment daily weekly, monthly and yearly
+ Smaple email (truncated)
+ ```
+ ============================================================
+AWS COST REPORT
+Generated: 2025-11-07 00:00:00 UTC
+============================================================
+
+NOTE: AWS Cost Explorer data has a 24-48 hour delay.
+Reports show costs from 2-3 days ago for accuracy.
+
+📊 DAILY COSTS (2025-11-05)
+📊 YEARLY COSTS (Last 12 Months)
+------------------------------------------------------------
+Total Cost: $15.34
+Average Monthly Cost: $1.28
+
+Top Services:
+  • Amazon Registrar: $13.00
+  • Tax: $2.34
+
+```
+
 ### 🚀 Quick start
 ```bash
 git clone https://github.com/andiggi/cloud_shark.git
 cd cloud_shark
 pulumi up   
 ```
+
+
 
 ## Prerequisites
 
@@ -135,30 +163,7 @@ pulumi up
  pulumi config set aws:region us-west-2
  ```
 
- ## Outputs
 
- send email of cost assesment daily weekly, monthly and yearly
- Smaple email (truncated)
- ```
- ============================================================
-AWS COST REPORT
-Generated: 2025-11-07 00:00:00 UTC
-============================================================
-
-NOTE: AWS Cost Explorer data has a 24-48 hour delay.
-Reports show costs from 2-3 days ago for accuracy.
-
-📊 DAILY COSTS (2025-11-05)
-📊 YEARLY COSTS (Last 12 Months)
-------------------------------------------------------------
-Total Cost: $15.34
-Average Monthly Cost: $1.28
-
-Top Services:
-  • Amazon Registrar: $13.00
-  • Tax: $2.34
-
-```
  
  ## Help and Community
 
