@@ -4,12 +4,28 @@
 
  ## Overview
 
-automatic aws billing daily, weekly, monthly and yearly sent to your email
-uses Lambda, SNS, and cost explorer. 
+# 🦈 Cloud Shark — AWS Cost Reports by Email
 
+> Automated cost reports for AWS — delivered daily, weekly, or monthly.
 
+Cloud Shark runs entirely on AWS (Lambda + SNS + Cost Explorer).  
+It keeps track of your AWS spending trends and sends cost summaries straight to your inbox.
 
- ## Prerequisites
+✅ **Why use it**
+- Stop surprise bills before they happen  
+- Understand service-wise spend trends  
+- Easy to fork / customize / self-host  
+- 100 % open source — written in Python 🐍
+
+---
+### 🚀 Quick start
+```bash
+git clone https://github.com/andiggi/cloud_shark.git
+cd cloud_shark
+pulumi up   
+```
+
+## Prerequisites
 
  - An AWS account with permissions to create S3 buckets.
  - AWS credentials configured in your environment (for example via AWS CLI or environment variables).
