@@ -22,16 +22,73 @@ pulumi up
 
 ## Prerequisites
 
- - An AWS account with permissions to create S3 buckets.
  - AWS credentials configured in your environment (for example via AWS CLI or environment variables).
+ - permissions needed:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaCoreAccess",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:InvokeFunction",
+        "lambda:GetFunction",
+        "lambda:ListFunctions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish",
+        "sns:CreateTopic",
+        "sns:Subscribe",
+        "sns:ListTopics",
+        "sns:GetTopicAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CostExplorerAccess",
+      "Effect": "Allow",
+      "Action": [
+        "ce:GetCostAndUsage",
+        "ce:GetCostForecast",
+        "ce:GetDimensionValues",
+        "ce:GetReservationUtilization",
+        "ce:GetSavingsPlansUtilization",
+        "ce:GetSavingsPlansUtilizationDetails"
+      ],
+      "Resource": "*"
+    }    
+  ]
+}
+
+```
  - Python 3.6 or later installed.
  - Pulumi CLI already installed and logged in.
  
  ## Gotchas
-  - Sometimes email for SNS subscription is not sent, 
-      login to AWS console and resend the email for confirmation
-
- ## Getting Started
+  - setup pulumi first
+  - make sure your access_key has the required permissions (tweak them removing what you feel not required, haven't tested extensively)
+ 
+ ## pulumi setup - tentative
 
  1. First Generate a new project from this template:
     ```bash
@@ -81,22 +138,9 @@ pulumi up
 
  ## Outputs
 
- Once deployed, the stack exports:
+ send email of cost assesment daily weekly, monthly and yearly
 
- - `bucket_name` — the ID of the created S3 bucket.
-
- Retrieve outputs with:
- ```bash
- pulumi stack output bucket_name
- ```
-
- ## Next Steps
-
- - Customize `__main__.py` to add or configure additional resources.
- - Explore the Pulumi AWS SDK: https://www.pulumi.com/registry/packages/aws/
- - Break your infrastructure into modules for better organization.
- - Integrate into CI/CD pipelines for automated deployments.
-
+ 
  ## Help and Community
 
  If you have questions or need assistance:
