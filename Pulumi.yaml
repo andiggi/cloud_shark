@@ -1,0 +1,11 @@
+name: cloud_shark
+description: A minimal AWS Python Pulumi program
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: env
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
